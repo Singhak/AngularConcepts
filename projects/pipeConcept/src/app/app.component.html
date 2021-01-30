@@ -10,8 +10,9 @@
     </p>
     <p>"url | fetchJson | json"</p>
     <hr />
-    <div *ngFor="let i of [11, 22, 33]">
-      {{ "http://ip-api.com/json/24.48.0." + i | fetchJson | json }}
+    <div *ngFor="let i of ['14.48.10.90', '24.48.0.22', '154.48.10.90']">
+      ip: {{ i }}:
+      {{ "http://ip-api.com/json/" + i | fetchJson | json }}
     </div>
   </div>
   <hr />
