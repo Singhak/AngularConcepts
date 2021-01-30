@@ -6,5 +6,18 @@
 */
 {
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "./projects/pipeConcept/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/pipeConcept/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/directiveConcept/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/directiveConcept/tsconfig.spec.json"
+    }
+]
 }

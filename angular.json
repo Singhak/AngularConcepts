@@ -2,5 +2,240 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "pipeConcept": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/pipeConcept",
+      "sourceRoot": "projects/pipeConcept/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/pipeConcept",
+            "index": "projects/pipeConcept/src/index.html",
+            "main": "projects/pipeConcept/src/main.ts",
+            "polyfills": "projects/pipeConcept/src/polyfills.ts",
+            "tsConfig": "projects/pipeConcept/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/pipeConcept/src/favicon.ico",
+              "projects/pipeConcept/src/assets"
+            ],
+            "styles": [
+              "projects/pipeConcept/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/pipeConcept/src/environments/environment.ts",
+                  "with": "projects/pipeConcept/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "pipeConcept:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "pipeConcept:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "pipeConcept:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/pipeConcept/src/test.ts",
+            "polyfills": "projects/pipeConcept/src/polyfills.ts",
+            "tsConfig": "projects/pipeConcept/tsconfig.spec.json",
+            "karmaConfig": "projects/pipeConcept/karma.conf.js",
+            "assets": [
+              "projects/pipeConcept/src/favicon.ico",
+              "projects/pipeConcept/src/assets"
+            ],
+            "styles": [
+              "projects/pipeConcept/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/pipeConcept/tsconfig.app.json",
+              "projects/pipeConcept/tsconfig.spec.json",
+              "projects/pipeConcept/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/pipeConcept/e2e/protractor.conf.js",
+            "devServerTarget": "pipeConcept:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "pipeConcept:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "directiveConcept": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/directiveConcept",
+      "sourceRoot": "projects/directiveConcept/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/directiveConcept",
+            "index": "projects/directiveConcept/src/index.html",
+            "main": "projects/directiveConcept/src/main.ts",
+            "polyfills": "projects/directiveConcept/src/polyfills.ts",
+            "tsConfig": "projects/directiveConcept/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/directiveConcept/src/favicon.ico",
+              "projects/directiveConcept/src/assets"
+            ],
+            "styles": [
+              "projects/directiveConcept/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/directiveConcept/src/environments/environment.ts",
+                  "with": "projects/directiveConcept/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "directiveConcept:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "directiveConcept:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "directiveConcept:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/directiveConcept/src/test.ts",
+            "polyfills": "projects/directiveConcept/src/polyfills.ts",
+            "tsConfig": "projects/directiveConcept/tsconfig.spec.json",
+            "karmaConfig": "projects/directiveConcept/karma.conf.js",
+            "assets": [
+              "projects/directiveConcept/src/favicon.ico",
+              "projects/directiveConcept/src/assets"
+            ],
+            "styles": [
+              "projects/directiveConcept/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/directiveConcept/tsconfig.app.json",
+              "projects/directiveConcept/tsconfig.spec.json",
+              "projects/directiveConcept/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/directiveConcept/e2e/protractor.conf.js",
+            "devServerTarget": "directiveConcept:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "directiveConcept:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "defaultProject": "pipeConcept"
 }
