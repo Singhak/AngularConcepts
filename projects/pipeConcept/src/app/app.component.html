@@ -1,18 +1,38 @@
-<div>
-  <p>Example of custom and impure pipe.</p>
-  <p>fetchJson Pipe</p>
-  <li>Take url as input</li>
-  <li>Return result of url after http call</li>
-  <p>
-    In below example we used custom pipe 'fetchJson'. It will return json
-    object. And to parse that json object we used default pipe 'Json'
-  </p>
-  <p>"url | fetchJson | json"</p>
+<div class="container">
+  <div>
+    <h2>Example of custom and impure pipe.</h2>
+    <h3>fetchJson Pipe</h3>
+    <li>Take url as input</li>
+    <li>Return result of url after http call</li>
+    <p>
+      In below example we used custom pipe 'fetchJson'. It will return json
+      object. And to parse that json object we used default pipe 'Json'
+    </p>
+    <p>"url | fetchJson | json"</p>
+    <hr />
+    <div *ngFor="let i of [11, 22, 33]">
+      {{ "http://ip-api.com/json/24.48.0." + i | fetchJson | json }}
+    </div>
+  </div>
   <hr />
-  <div *ngFor="let i of [1, 2, 3]">
-    {{ i }}.
-    {{ "http://ip-api.com/json/24.48.0." + i | fetchJson | json }}
+  <div>
+    <h2>Example default pure pipe 'Date pipe'.</h2>
+    <h3>Date Pipe</h3>
+    <li>Formats a date value according to locale rules.</li>
+    <li>Take values as string | number | Date</li>
+    <p>
+      In below example we used custom pipe 'fetchJson'. It will return json
+      object. And to parse that json object we used default pipe 'Json'
+    </p>
+    <p>"value_expression | date [ : format [ : timezone [ : locale ] ] ]"</p>
+    <hr />
+    <div *ngFor="let dateObj of arrDate">
+      {{ dateObj }}<br />
+      dateObj | date -> {{ dateObj | date }}<br />
+      dateObj | date: "medium" -> {{ dateObj | date: "medium" }}<br />
+      dateObj | date: "shortTime" -> {{ dateObj | date: "shortTime" }}<br />
+      dateObj | date: "longDate" -> {{ dateObj | date: "longDate" }}
+      <hr />
+    </div>
   </div>
 </div>
-
-<hr />
